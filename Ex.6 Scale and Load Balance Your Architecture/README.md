@@ -3,7 +3,12 @@
 ## Title
 
 Scale and Load Balance Your Architecture
-Author : your name   Reg no : yours   Date :
+
+### Author : Syed Abu Hanifa
+
+### Reg no :212224040346
+
+### Date : 12-03-2026
 
 ---
 
@@ -66,14 +71,55 @@ Students test the setup by generating traffic and observing automatic scaling an
 
 ## Workflow (To be filled by Student)
 
-Describe step-by-step how you performed this experiment in your own words.
+
+1. **Review Existing Architecture**  
+   - Examine the current EC2 setup, note AMI, instance type, security groups, and user data.  
+   - Identify limitations such as single‑instance bottlenecks or lack of scaling.
+
+2. **Create a Launch Template**  
+   - Define EC2 configuration (AMI, instance type, security group, user data).  
+   - Save the template for reuse in Auto Scaling operations.
+
+3. **Create an Auto Scaling Group (ASG)**  
+   - Use the launch template to build the ASG.  
+   - Configure minimum, maximum, and desired capacity, and select availability zones.
+
+4. **Configure an Application Load Balancer (ALB)**  
+   - Create the ALB with listeners (HTTP/HTTPS).  
+   - Define target groups and health checks for routing traffic.
+
+5. **Register Auto Scaling Group with Load Balancer**  
+   - Attach the ASG to the ALB’s target group.  
+   - Ensure instances launched by ASG are automatically registered and monitored.
+
+6. **Configure Scaling Policies**  
+   - Set CloudWatch alarms to trigger scaling actions.  
+   - Example: scale out when CPU > 70%, scale in when CPU < 30%.
+
+7. **Test Load Balancing and Scaling**  
+   - Generate traffic using tools (e.g., JMeter, Locust).  
+   - Observe ALB distributing requests and ASG adjusting capacity automatically.
 
 ---
+
 
 ## Output Screenshots 
 
 
----
+<img width="1535" height="738" alt="image" src="https://github.com/user-attachments/assets/ba24cb89-234f-4ae1-82be-fe1cf93c0f7c" />
+
+
+<img width="1535" height="742" alt="image" src="https://github.com/user-attachments/assets/f68b43dc-ca63-42fd-815a-1750227ba06b" />
+
+
+<img width="1535" height="738" alt="image" src="https://github.com/user-attachments/assets/df813db4-4c52-4ab5-8d0e-fa8f4119398c" />
+
+
+<img width="1535" height="735" alt="image" src="https://github.com/user-attachments/assets/9153925f-173c-4126-86dd-3545cf37de90" />
+
+
+
+
 
 
 ## Result
